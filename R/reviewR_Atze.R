@@ -27,6 +27,9 @@ movies %>%
   labs(title = queryYear) +
   geom_point(data = movies[movies$title == query,],
              color = "red") +
-  geom_text_repel(aes(label=query), data = movies[movies$title == query,], box.padding=0.5, point.padding=0.5)
+  geom_label_repel(aes(label = query),
+                   data = movies[movies$title == query,],
+                   box.padding   = 0.5,
+                   label.padding = 0.5)
 
 # Calculate percentile:
