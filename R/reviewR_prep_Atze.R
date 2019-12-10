@@ -18,7 +18,7 @@ query_year(movies, "Gone with the Wind")
 
 #Plot Movie:
 query <- "Gone with the Wind"
-queryYear <- query_year(movies, query)
+queryYear <- query_year(movies, query) #function from 1st step
 
 movies %>% 
   filter(year == queryYear) %>% 
@@ -28,3 +28,5 @@ movies %>%
   geom_point(data = movies[movies$title == query,],
              color = "red") +
   geom_text_repel(aes(label=query), data = movies[movies$title == query,], box.padding=0.5, point.padding=0.5)
+
+# Calculate percentile:
