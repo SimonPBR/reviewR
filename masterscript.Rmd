@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Inlcude Library
+library(tidyverse)
+library(ggplot2movies)
+library(ggrepel)
+
+#Open Query Script to get Year from Name
+source("R/Query.R")
+source("R/Plot.R")
+```
+
+## plot
+
+```{r}
+
+# getYear("Gone with the Wind")
+
+#Call function
+plotMovie("Gone with the Wind", "red")
+
+```
+
