@@ -5,7 +5,14 @@ library(tidyverse)
 
 #Movie query: input = movie title, output = year
 
-query_year <- function()
+query_year <- function(data, metric = title, value = year) {
+  metric <- enquo(metric)
+  value <- enquo(value)
+  data %>% 
+    filter(title == !!metric)
+}
+
+query_year(movies,"Matrix, The")
 
 query1 <- movies %>% 
   select(title, year)
